@@ -1,7 +1,7 @@
 package com.example.contactsapp
 
-import com.example.contactsapp.data.SubData
 import com.example.contactsapp.data.UserInfo
+import com.example.contactsapp.network.NetworkContactsContainer
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -11,7 +11,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 private const val BASE_URL = "https://dummyapi.io/data/v1/"
 private const val KEY = "61e0434bb659e5c20f64e9e6"
@@ -35,7 +34,7 @@ private val retrofit = Retrofit.Builder()
 interface ContactsListApiService {
     @Headers("app-id: $KEY")
     @GET("user")
-    suspend fun getData(): SubData
+    suspend fun getData(): NetworkContactsContainer
 }
 
 object ContactsListApi {

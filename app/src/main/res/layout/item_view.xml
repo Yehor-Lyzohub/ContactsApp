@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="72dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/item_view"
-        android:layout_width="323dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:gravity="start"
+        android:text="Test Test"
         android:textColor="@color/black"
         android:textSize="24sp"
-        android:text="Test Test"
         app:layout_constraintBottom_toBottomOf="@+id/contact_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/contact_img"
-        app:layout_constraintTop_toTopOf="@+id/contact_img" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="@+id/contact_img"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact_img" />
+        app:layout_constraintTop_toTopOf="@+id/contact_img"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/contact_img"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:foregroundGravity="fill"
-        app:layout_constraintBottom_toTopOf="@id/divider"
         app:layout_constraintEnd_toStartOf="@+id/item_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/contact_icon_foreground" />
+        app:srcCompat="@mipmap/contact_icon_foreground"
+        tools:ignore="ContentDescription" />
+
+    <CheckBox
+        android:id="@+id/favoriteCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:button="@android:drawable/btn_star"
+        android:buttonTint="#00FFFFFF"
+        android:foreground="@android:drawable/btn_star"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:theme="@style/MyCheckBox"
+        app:layout_constraintBottom_toBottomOf="@+id/item_view"
+        app:layout_constraintEnd_toEndOf="@+id/item_view"
+        app:layout_constraintTop_toTopOf="@+id/item_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailFragment">
+    tools:context=".ui.DetailFragment">
 
     <ImageView
         android:id="@+id/contact_img_large"
@@ -51,4 +51,20 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact_name" />
+
+    <CheckBox
+        android:id="@+id/favoriteCheckBoxOnDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:button="@android:drawable/btn_star"
+        android:buttonTint="#00FFFFFF"
+        android:foreground="@android:drawable/btn_star"
+        android:gravity="center_vertical|center_horizontal"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:theme="@style/MyCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
